@@ -46,10 +46,10 @@ internal class ViewStateViewModelTest {
     fun `test processor results are passed to reducer`() {
         verifyZeroInteractions(reducer)
         SUT.accept(StubEvent(1))
-        verify(reducer).reduce(any(), argThat { id == 1 })
+        verify(reducer).reduce(any(), argThat { this is TaskResult.Success && result.id == 1 })
         clearInvocations(reducer)
         SUT.accept(StubEvent(2))
-        verify(reducer).reduce(any(), argThat { id == 2 })
+        verify(reducer).reduce(any(), argThat { this is TaskResult.Success && result.id == 2 })
         verifyNoMoreInteractions(reducer)
     }
 
@@ -73,21 +73,23 @@ internal class ViewStateViewModelTest {
         }
     }
 
-    private open class StubProcessor : Processor<StubEvent, StubResult> {
+    private open class StubProcessor : Processor<StubEvent, TaskResult<StubResult>> {
 
-        override fun process(event: StubEvent): Observable<StubResult> = Observable.just(StubResult(event.id))
+        override fun process(event: StubEvent): Observable<TaskResult<StubResult>> = Observable.just(
+            TaskResult.Success(StubResult(event.id))
+        )
     }
 
-    private open class StubReducer : Reducer<StubViewState, StubResult> {
+    private open class StubReducer : Reducer<StubViewState, TaskResult<StubResult>> {
 
-        override fun reduce(viewState: StubViewState, result: StubResult): StubViewState {
-            return viewState.copy(id = result.id)
+        override fun reduce(viewState: StubViewState, result: TaskResult<StubResult>): StubViewState {
+            return viewState.copy(id = (result as TaskResult.Success).result.id)
         }
     }
 
     private class ViewStateViewModelImpl(
         initialViewState: StubViewState,
-        processor: Processor<StubEvent, StubResult>,
-        reducer: Reducer<StubViewState, StubResult>
+        processor: Processor<StubEvent, TaskResult<StubResult>>,
+        reducer: Reducer<StubViewState, TaskResult<StubResult>>
     ) : ViewStateViewModel<StubViewState, StubEvent, StubResult>(initialViewState, processor, reducer)
 }

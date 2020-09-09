@@ -10,8 +10,8 @@ import io.reactivex.rxjava3.subjects.PublishSubject
 
 abstract class ViewStateViewModel<ViewState, Event, Result>(
     initialViewState: ViewState,
-    processor: Processor<Event, Result>,
-    reducer: Reducer<ViewState, Result>
+    processor: Processor<Event, TaskResult<Result>>,
+    reducer: Reducer<ViewState, TaskResult<Result>>
 ) : ViewModel(), ViewStateProvider<ViewState>, Consumer<Event> {
 
     private val backingViewStateSubject = PublishSubject.create<ViewState>()

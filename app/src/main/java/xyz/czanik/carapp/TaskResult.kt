@@ -1,10 +1,10 @@
 package xyz.czanik.carapp
 
-sealed class TaskResult<out Result, out Exception> {
+sealed class TaskResult<Result> {
 
-    data class Success<out Result>(val result: Result) : TaskResult<Result, Nothing>()
+    data class Success<Result>(val result: Result) : TaskResult<Result>()
 
-    object InProgress : TaskResult<Nothing, Nothing>()
+    data class InProgress<Result>(val result: Result? = null, val exception: Throwable? = null) : TaskResult<Result>()
 
-    data class Failure<out Exception>(val cause: Exception) : TaskResult<Nothing, Exception>()
+    data class Failure<Result>(val cause: Throwable) : TaskResult<Result>()
 }
