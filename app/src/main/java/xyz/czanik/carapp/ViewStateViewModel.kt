@@ -21,7 +21,7 @@ abstract class ViewStateViewModel<ViewState, Event, Result>(
 
     init {
         events
-                .flatMap(processor::process)
+                .compose(processor::process)
                 .scan(initialViewState, reducer::reduce)
                 .subscribe(::postViewState)
                 .manageDisposable()

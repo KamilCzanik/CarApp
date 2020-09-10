@@ -32,17 +32,6 @@ internal class ViewStateViewModelTest {
     }
 
     @Test
-    fun `test SUT provides events to processor`() {
-        verifyZeroInteractions(processor)
-        SUT.accept(StubEvent(1))
-        verify(processor).process(StubEvent(1))
-        clearInvocations(processor)
-        SUT.accept(StubEvent(2))
-        verify(processor).process(StubEvent(2))
-        verifyNoMoreInteractions(processor)
-    }
-
-    @Test
     fun `test processor results are passed to reducer`() {
         verifyZeroInteractions(reducer)
         SUT.accept(StubEvent(1))
@@ -75,9 +64,8 @@ internal class ViewStateViewModelTest {
 
     private open class StubProcessor : Processor<StubEvent, TaskResult<StubResult>> {
 
-        override fun process(event: StubEvent): Observable<TaskResult<StubResult>> = Observable.just(
-            TaskResult.Success(StubResult(event.id))
-        )
+        override fun process(events: Observable<StubEvent>): Observable<TaskResult<StubResult>> = events
+                .map { event -> TaskResult.Success(StubResult(event.id)) }
     }
 
     private open class StubReducer : Reducer<StubViewState, TaskResult<StubResult>> {
