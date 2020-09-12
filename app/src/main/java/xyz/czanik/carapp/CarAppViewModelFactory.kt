@@ -1,8 +1,8 @@
-package xyz.czanik.carapp.carbrands
+package xyz.czanik.carapp
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import xyz.czanik.carapp.Container
+import xyz.czanik.carapp.carbrands.CarBrandsViewModel
 
 class CarAppViewModelFactory(
     private val container: Container
