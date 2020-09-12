@@ -1,4 +1,4 @@
-package xyz.czanik.carapp.carbrands
+package xyz.czanik.carapp.carbrands.processors
 
 import io.reactivex.rxjava3.core.Observable
 import xyz.czanik.carapp.Navigator

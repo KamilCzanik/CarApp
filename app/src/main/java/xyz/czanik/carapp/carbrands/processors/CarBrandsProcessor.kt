@@ -1,10 +1,12 @@
-package xyz.czanik.carapp.carbrands
+package xyz.czanik.carapp.carbrands.processors
 
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.kotlin.ofType
 import xyz.czanik.carapp.Navigator
 import xyz.czanik.carapp.mvi.Processor
 import xyz.czanik.carapp.Repository
+import xyz.czanik.carapp.carbrands.CarBrand
+import xyz.czanik.carapp.carbrands.CarBrandsContract
 import xyz.czanik.carapp.mvi.TaskResult
 
 class CarBrandsProcessor(

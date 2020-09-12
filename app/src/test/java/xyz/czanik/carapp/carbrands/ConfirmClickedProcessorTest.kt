@@ -7,6 +7,7 @@ import io.reactivex.rxjava3.subjects.PublishSubject
 import org.junit.jupiter.api.Test
 import xyz.czanik.carapp.Navigator
 import xyz.czanik.carapp.carbrands.CarBrandsContract.Event.ConfirmClicked
+import xyz.czanik.carapp.carbrands.processors.ConfirmClickedProcessor
 
 internal class ConfirmClickedProcessorTest {
 

@@ -4,6 +4,7 @@ import xyz.czanik.carapp.Container
 import xyz.czanik.carapp.carbrands.CarBrandsContract.Event
 import xyz.czanik.carapp.carbrands.CarBrandsContract.Result
 import xyz.czanik.carapp.carbrands.CarBrandsContract.ViewState
+import xyz.czanik.carapp.carbrands.processors.CarBrandsProcessor
 import xyz.czanik.carapp.mvi.ViewStateViewModel
 
 class CarBrandsViewModel(
