@@ -3,9 +3,9 @@ package xyz.czanik.carapp.carbrands
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.kotlin.ofType
 import xyz.czanik.carapp.Navigator
-import xyz.czanik.carapp.Processor
+import xyz.czanik.carapp.mvi.Processor
 import xyz.czanik.carapp.Repository
-import xyz.czanik.carapp.TaskResult
+import xyz.czanik.carapp.mvi.TaskResult
 
 class CarBrandsProcessor(
     private val navigator: Navigator,

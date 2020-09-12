@@ -2,7 +2,7 @@ package xyz.czanik.carapp.carbrands
 
 import io.reactivex.rxjava3.subjects.PublishSubject
 import org.junit.jupiter.api.Test
-import xyz.czanik.carapp.TaskResult
+import xyz.czanik.carapp.mvi.TaskResult
 import xyz.czanik.carapp.carbrands.CarBrandsContract.*
 
 internal class CarBrandClickedProcessorTest {

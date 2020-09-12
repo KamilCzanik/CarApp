@@ -1,4 +1,4 @@
-package xyz.czanik.carapp
+package xyz.czanik.carapp.mvi
 
 import androidx.lifecycle.LiveData
 

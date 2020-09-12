@@ -1,8 +1,8 @@
 package xyz.czanik.carapp.carbrands
 
-import xyz.czanik.carapp.Error
-import xyz.czanik.carapp.Reducer
-import xyz.czanik.carapp.TaskResult
+import xyz.czanik.carapp.mvi.Error
+import xyz.czanik.carapp.mvi.Reducer
+import xyz.czanik.carapp.mvi.TaskResult
 import xyz.czanik.carapp.carbrands.CarBrandsContract.Result
 import xyz.czanik.carapp.carbrands.CarBrandsContract.ViewState
 

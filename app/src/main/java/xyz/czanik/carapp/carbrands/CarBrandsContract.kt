@@ -1,6 +1,6 @@
 package xyz.czanik.carapp.carbrands
 
-import xyz.czanik.carapp.Error
+import xyz.czanik.carapp.mvi.Error
 
 interface CarBrandsContract {
 

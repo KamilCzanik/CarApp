@@ -10,7 +10,7 @@ import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.subjects.PublishSubject
 import org.junit.jupiter.api.Test
 import xyz.czanik.carapp.Repository
-import xyz.czanik.carapp.TaskResult
+import xyz.czanik.carapp.mvi.TaskResult
 import xyz.czanik.carapp.carbrands.CarBrandsContract.Result.CarBrands
 
 internal class InitProcessorTest {

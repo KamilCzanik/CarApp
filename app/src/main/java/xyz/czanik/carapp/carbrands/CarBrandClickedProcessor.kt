@@ -1,8 +1,8 @@
 package xyz.czanik.carapp.carbrands
 
 import io.reactivex.rxjava3.core.Observable
-import xyz.czanik.carapp.Processor
-import xyz.czanik.carapp.TaskResult
+import xyz.czanik.carapp.mvi.Processor
+import xyz.czanik.carapp.mvi.TaskResult
 import xyz.czanik.carapp.carbrands.CarBrandsContract.Event.CarBrandClicked
 import xyz.czanik.carapp.carbrands.CarBrandsContract.Result.CarBrandSelected
 

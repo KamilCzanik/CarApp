@@ -1,4 +1,4 @@
-package xyz.czanik.carapp
+package xyz.czanik.carapp.mvi
 
 import androidx.core.util.Consumer
 import androidx.lifecycle.LiveData
@@ -7,6 +7,7 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.kotlin.addTo
 import io.reactivex.rxjava3.subjects.PublishSubject
+import xyz.czanik.carapp.toLiveData
 
 abstract class ViewStateViewModel<ViewState, Event, Result>(
     initialViewState: ViewState,

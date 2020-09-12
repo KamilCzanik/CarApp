@@ -11,6 +11,10 @@ import com.nhaarman.mockitokotlin2.verifyZeroInteractions
 import io.reactivex.rxjava3.core.Observable
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
+import xyz.czanik.carapp.mvi.Processor
+import xyz.czanik.carapp.mvi.Reducer
+import xyz.czanik.carapp.mvi.TaskResult
+import xyz.czanik.carapp.mvi.ViewStateViewModel
 
 @ExtendWith(InstantExecutorExtension::class)
 internal class ViewStateViewModelTest {

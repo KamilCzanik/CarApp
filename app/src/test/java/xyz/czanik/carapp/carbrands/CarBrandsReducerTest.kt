@@ -2,8 +2,8 @@ package xyz.czanik.carapp.carbrands
 
 import junit.framework.Assert.assertEquals
 import org.junit.jupiter.api.Test
-import xyz.czanik.carapp.Error
-import xyz.czanik.carapp.TaskResult
+import xyz.czanik.carapp.mvi.Error
+import xyz.czanik.carapp.mvi.TaskResult
 import xyz.czanik.carapp.carbrands.CarBrandsContract.Result.CarBrandSelected
 import xyz.czanik.carapp.carbrands.CarBrandsContract.Result.CarBrands
 

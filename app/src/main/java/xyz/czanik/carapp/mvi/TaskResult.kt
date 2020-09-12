@@ -1,4 +1,4 @@
-package xyz.czanik.carapp
+package xyz.czanik.carapp.mvi
 
 sealed class TaskResult<out Result> {
 
