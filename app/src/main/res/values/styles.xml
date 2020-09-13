@@ -1,11 +1,28 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="materialCardViewStyle">@style/Widget.CarApp.CardView</item>
     </style>
 
+    <style name="Widget.CarApp.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">8dp</item>
+    </style>
+
+    <style name="Widget.CarApp.Label" parent="Widget.MaterialComponents.TextView">
+        <item name="android:gravity">center</item>
+        <item name="maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textAppearance">?textAppearanceBody2</item>
+    </style>
+
+    <style name="Widget.CarApp.ImageView.CarBrand" parent="">
+        <item name="android:background">@android:color/white</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
 </resources>

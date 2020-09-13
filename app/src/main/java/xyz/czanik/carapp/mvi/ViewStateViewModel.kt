@@ -1,4 +1,4 @@
-package xyz.czanik.carapp
+package xyz.czanik.carapp.mvi
 
 import androidx.core.util.Consumer
 import androidx.lifecycle.LiveData
@@ -7,11 +7,12 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.kotlin.addTo
 import io.reactivex.rxjava3.subjects.PublishSubject
+import xyz.czanik.carapp.toLiveData
 
 abstract class ViewStateViewModel<ViewState, Event, Result>(
     initialViewState: ViewState,
-    processor: Processor<Event, Result>,
-    reducer: Reducer<ViewState, Result>
+    processor: Processor<Event, TaskResult<Result>>,
+    reducer: Reducer<ViewState, TaskResult<Result>>
 ) : ViewModel(), ViewStateProvider<ViewState>, Consumer<Event> {
 
     private val backingViewStateSubject = PublishSubject.create<ViewState>()
@@ -21,7 +22,7 @@ abstract class ViewStateViewModel<ViewState, Event, Result>(
 
     init {
         events
-                .flatMap(processor::process)
+                .compose(processor::process)
                 .scan(initialViewState, reducer::reduce)
                 .subscribe(::postViewState)
                 .manageDisposable()
