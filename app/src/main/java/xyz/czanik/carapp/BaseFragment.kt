@@ -1,7 +1,6 @@
-package xyz.czanik.carapp.carbrands
+package xyz.czanik.carapp
 
 import androidx.fragment.app.Fragment
-import xyz.czanik.carapp.Container
 
 abstract class BaseFragment : Fragment() {
 
