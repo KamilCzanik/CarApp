@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CarApp</string>
+    <string name="car_brands_screen_title">Select your car brand</string>
 </resources>

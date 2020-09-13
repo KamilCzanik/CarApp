@@ -4,10 +4,12 @@
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:colorBackground">@color/colorBackground</item>
         <item name="materialCardViewStyle">@style/Widget.CarApp.CardView</item>
+        <item name="toolbarStyle">@style/Widget.CarApp.Toolbar</item>
     </style>
 
     <style name="Widget.CarApp.CardView" parent="Widget.MaterialComponents.CardView">
@@ -25,4 +27,7 @@
         <item name="android:background">@android:color/white</item>
         <item name="android:scaleType">centerInside</item>
     </style>
+
+    <style name="Widget.CarApp.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary" />
+
 </resources>
