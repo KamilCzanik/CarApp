@@ -13,6 +13,7 @@
     </data>
 
     <com.google.android.material.card.MaterialCardView
+        style="@style/Widget.CarApp.CardView.CarBrandItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -25,9 +26,9 @@
 
             <ImageView
                 android:id="@+id/carBrandImage"
+                style="@style/Widget.CarApp.ImageView.CarBrand"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                style="@style/Widget.CarApp.ImageView.CarBrand"
                 android:src="@{viewModel.logoUrl}"
                 app:layout_constraintDimensionRatio="W,1:1"
                 app:layout_constraintEnd_toEndOf="parent"
