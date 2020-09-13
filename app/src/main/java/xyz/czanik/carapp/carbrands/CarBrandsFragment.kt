@@ -13,7 +13,7 @@ import xyz.czanik.carapp.databinding.FragmentCarBrandsBinding
 class CarBrandsFragment : BaseFragment() {
 
     private val carBrandsViewModel by viewModels<CarBrandsViewModel> { CarAppViewModelFactory(container) }
-    private val carBrandsAdapter by lazy(::CarBrandsAdapter)
+    private val carBrandsAdapter by lazy { CarBrandsAdapter(carBrandsViewModel) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +27,7 @@ class CarBrandsFragment : BaseFragment() {
 
     private fun render(viewState: CarBrandsContract.ViewState) {
         carBrandsAdapter.submitList(viewState.carBrands)
+        carBrandsAdapter.selected = viewState.selectedBrand
     }
 
     override fun onResume() {
