@@ -23,14 +23,14 @@ internal class ConfirmClickedProcessorTest {
 
     @Test
     fun `test SUT navigates after event`() {
-        val carBrand = CarBrand("VW")
+        val carBrand = CarBrand("VW","")
         events.onNext(ConfirmClicked(carBrand))
         verify(navigator).navigateToFillCarData(carBrand)
     }
 
     @Test
     fun `test SUT does not return any result`() {
-        events.onNext(ConfirmClicked(CarBrand("VW")))
+        events.onNext(ConfirmClicked(CarBrand("VW","")))
         resultTester.assertNoValues()
     }
 }

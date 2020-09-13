@@ -40,7 +40,7 @@ internal class InitProcessorTest {
 
     @Test
     fun `test SUT emits success result with car brands`() {
-        val response = listOf(CarBrand("VW"))
+        val response = listOf(CarBrand("VW",""))
         arrangeWith(Single.just(response))
         resultTester.assertValueAt(1, TaskResult.Success(CarBrands(response)))
     }

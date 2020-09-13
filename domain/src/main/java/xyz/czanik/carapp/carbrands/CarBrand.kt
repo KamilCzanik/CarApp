@@ -1,3 +1,3 @@
 package xyz.czanik.carapp.carbrands
 
-data class CarBrand(val name: String)
+data class CarBrand(val name: String, val logoUrl: String)

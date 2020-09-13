@@ -23,7 +23,7 @@ internal class CarBrandsReducerTest {
 
     @Test
     fun `test SUT reduces success with car brands`() {
-        val carBrands = listOf(CarBrand(""))
+        val carBrands = listOf(CarBrand("",""))
         assertEquals(viewState(carBrands = carBrands), SUT.reduce(viewState(), TaskResult.Success(CarBrands(carBrands))))
     }
 
@@ -34,7 +34,7 @@ internal class CarBrandsReducerTest {
 
     @Test
     fun `test SUT reduces success with car brands and invalidates loading`() {
-        val carBrands = listOf(CarBrand(""))
+        val carBrands = listOf(CarBrand("",""))
         assertEquals(viewState(carBrands = carBrands), SUT.reduce(viewState(isLoading = true), TaskResult.Success(CarBrands(carBrands))))
     }
 
@@ -45,7 +45,7 @@ internal class CarBrandsReducerTest {
 
     @Test
     fun `test SUT reduces success with selected car brand and keeps car brands`() {
-        val carBrands = listOf(CarBrand(""))
+        val carBrands = listOf(CarBrand("",""))
         val selectedIndex = 0
         assertEquals(
             viewState(carBrands = carBrands, selectedBrand = carBrands[selectedIndex]),
